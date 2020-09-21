@@ -20,15 +20,25 @@ readCard() {
     for(i=0; i<lines; i++) {
         line = llList2String(notecardLines, i);
         if(osStringStartsWith(line, "[", 0)) {
-            llOwnerSay(getToken(line));
+            integer valid = llListFindList(AnimationTypes, [getLineP(line, 1)]);
+            if(~valid) {
+                llOwnerSay(getLineP(line, 0));
+            }
         }
     }
 }
 
-string getToken(string line) {
+string getLineP(string line, integer token) {
+    //Fetch Line parts.
     string ret;
-    integer end = llSubStringIndex(line, "]") - 2;
-    ret = llGetSubString(line, 1, end);
+    integer b = llSubStringIndex(line, "]") - 2;;
+    integer s = b + 3;
+    integer e = -1;
+    if(token) {
+        s = 2;
+        e = b;
+    }
+    ret = llGetSubString(line, s, e);
     return ret;
 }
 
