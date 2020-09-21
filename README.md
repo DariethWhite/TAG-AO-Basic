@@ -1,5 +1,6 @@
 # TAG-AO-Basic
 This is a basic Animation Overriden written in OSSL, and designed for opensim/TAG Grid.
+This is intended to be a drop in replacement for most ZHAO-II core scripts.
 
 # Instructions
 1. Add the config notecard.
