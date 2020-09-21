@@ -1,4 +1,5 @@
 integer Typing;
+integer Test;
 list Animations;
 list Overrides;
 key Owner;
@@ -14,6 +15,7 @@ init() {
                 ];
     Owner = llGetOwner();
     Typing = 0;
+    llRequestPermissions(Owner, PERMISSION_TRIGGER_ANIMATION);
 }
 
 override() {
@@ -45,6 +47,8 @@ default {
         }
     }
     touch_start(integer touched) {
-        llStartAnimation("TestAnim");
+        Test = ~Test;
+        if(Test) llStopAnimation("TestAnim");
+        else llStartAnimation("TestAmim");
     }
 }
