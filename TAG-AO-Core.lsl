@@ -1,5 +1,6 @@
 integer Typing;
 integer Test;
+string CurAnim;
 list Animations;
 list Overrides;
 key Owner;
@@ -7,6 +8,7 @@ key Owner;
 
 init() {
     // This function sets up all global variables.  Can be used to reset the script in place of llResetScript()
+    CurAnim = "";
     Animations = [ 
                     "Sitting on Ground", "Standing"
                  ];
@@ -27,6 +29,8 @@ override() {
     if(~animIndex) {
         string newAnim = llList2String(Overrides, animIndex);
         llOwnerSay("Overriding with " + newAnim);
+        if(CurAnim != "") llStopAnimation(CurAnim);
+        CurAnim = newAnim;
         llStopAnimation(anim);
         llStartAnimation(newAnim);
     }
@@ -47,8 +51,14 @@ default {
         }
     }
     touch_start(integer touched) {
-        Test = ~Test;
-        if(Test) llStopAnimation("TestAnim");
-        else llStartAnimation("TestAmim");
+        if(Test) {
+            llStopAnimation("TestAnim");
+            CurAnim = "";
+        }
+        else {
+            llStartAnimation("TestAmim");
+            CurAnim = "TestAnim";
+            Test = 1;
+        }
     }
 }
