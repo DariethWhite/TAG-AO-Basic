@@ -9,12 +9,14 @@ key Owner;
 init() {
     // This function sets up all global variables.  Can be used to reset the script in place of llResetScript()
     CurAnim = "";
-    Animations = [ 
-                    "Sitting on Ground", "Sitting", "Standing", "Turning Left", "Turning Right", "Walking",
-                    "Running", "PreJumping", "Jumping"
+    Animations = [
+                    "Sitting on Ground", "Sitting", "Striding", "Crouching", "CrouchWalking", "Soft
+                    Landing", "Standing Up", "Hovering Down", "Hovering Up", "FlyingSlow", "Flying",
+                    "Hovering", "Jumping", "PreJumping", "Running", "Turning Right", "Turning Left",
+                    "Walking", "Landing", "Standing", "Falling Down"
                  ];
     Overrides = [ 
-                    "TestAnim" 
+                    "TestAnim"
                 ];
     Owner = llGetOwner();
     Typing = 0;

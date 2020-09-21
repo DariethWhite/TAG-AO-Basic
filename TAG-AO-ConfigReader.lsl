@@ -1,7 +1,10 @@
 string NoteCard = "TAG-AO-Config";
-list AnimationTypes = [ 
-                        "Sitting on Ground", "Sitting", "Standing", "Turning Left", "Turning Right", "Walking",
-                        "Running", "PreJumping", "Jumping"
+list AnimationTypes = [
+                        "Sitting on Ground", "Sitting", "Striding", "Crouching",
+                        "CrouchWalking", "Soft Landing", "Standing Up", "Hovering Down",
+                        "Hovering Up", "FlyingSlow", "Flying", "Hovering", "Jumping",
+                        "PreJumping", "Running", "Turning Right", "Turning Left", "Walking",
+                        "Landing", "Standing", "Falling Down"
                       ];
 
 init() {
