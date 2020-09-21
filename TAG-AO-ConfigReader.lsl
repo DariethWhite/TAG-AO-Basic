@@ -20,9 +20,16 @@ readCard() {
     for(i=0; i<lines; i++) {
         line = llList2String(notecardLines, i);
         if(osStringStartsWith(line, "[", 0)) {
-            llOwnerSay(line);
+            llOwnerSay(getToken(line));
         }
     }
+}
+
+string getToken(string line) {
+    string ret;
+    integer end = llSubStringIndex(line, "]") - 2;
+    ret = llGetSubString(line, 1, end);
+    return ret;
 }
 
 default {
