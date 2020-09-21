@@ -1,3 +1,8 @@
+//Animation overrider intended for use on TAG Grid and opensim.
+//Please see The README file for information.
+//License is MIT and should be included in a notecard.
+//Git repo available at https://github.com/DariethWhite/TAG-AO-Basic.
+
 integer Typing;
 integer Test;
 string CurAnim;
@@ -15,7 +20,7 @@ init() {
                     "Hovering", "Jumping", "PreJumping", "Running", "Turning Right", "Turning Left",
                     "Walking", "Landing", "Standing", "Falling Down"
                  ];
-    Overrides = [ 
+    Overrides = [
                     "TestAnim"
                 ];
     Owner = llGetOwner();
