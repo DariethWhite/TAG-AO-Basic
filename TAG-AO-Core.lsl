@@ -10,7 +10,8 @@ init() {
     // This function sets up all global variables.  Can be used to reset the script in place of llResetScript()
     CurAnim = "";
     Animations = [ 
-                    "Sitting on Ground", "Standing"
+                    "Sitting on Ground", "Sitting", "Standing", "Turning Left", "Turning Right", "Walking",
+                    "Running", "PreJumping", "Jumping"
                  ];
     Overrides = [ 
                     "TestAnim" 
